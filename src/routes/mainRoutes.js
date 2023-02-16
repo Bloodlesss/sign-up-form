@@ -14,10 +14,11 @@ function MainRoutes() {
           exact
           path="/"
           action={() => {
-            return redirect("/SignUp");
+            console.log("asd");
+            return redirect("SignUp");
           }}
         />
-        <Route path="/SignUp" component={SignUp} />
+        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
     </Router>
   );
