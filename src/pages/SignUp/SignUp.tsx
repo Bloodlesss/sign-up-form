@@ -1,10 +1,9 @@
 import React from "react";
+import FormComponent from "../../components/form/FormComponent";
 import styles from "./SignUp.module.scss"
 function SignUp(){
 return (
-    <div className={styles.body}>
-        Hello world
-    </div>
+    <FormComponent></FormComponent>
 )
 }
 export default SignUp

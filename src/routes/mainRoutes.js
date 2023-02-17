@@ -1,26 +1,23 @@
 import React from "react";
 import SignUp from "../pages/signUp";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Routes,
   redirect,
+  Navigate,
 } from "react-router-dom";
+import FormComponent from "../components/form/FormComponent";
 function MainRoutes() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route
-          exact
-          path="/"
-          action={() => {
-            console.log("asd");
-            return redirect("SignUp");
-          }}
-        />
+        <Route path="/" element={<Navigate to="/SignUp" />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Form" element={<FormComponent />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

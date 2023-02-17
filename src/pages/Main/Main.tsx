@@ -4,9 +4,9 @@ import styles from "./Main.module.scss";
 function Main() {
   return (
     <>
-      <div className="header"></div>
+      <div className="header">title</div>
       <MainRoutes></MainRoutes>
-      <div className="footer"></div>
+      <div className="footer">footer</div>
     </>
   );
 }
