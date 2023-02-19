@@ -1,8 +1,8 @@
 import { InputBaseComponentProps } from "@mui/material";
-import PropTypes from "prop-types";
+import { ChangeEvent } from "react";
 export interface formFieldPropsModel {
   fieldName: string;
-  pattern: RegExp;
+  regex: RegExp;
   isRequired: boolean;
   isEmail: boolean;
   isPassword: boolean;
@@ -12,5 +12,6 @@ export interface formFieldPropsModel {
   inputProps: InputBaseComponentProps;
   onFocus: () => void;
   onBlur: () => void;
+  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   validationRules: Record<string, any>;
 }

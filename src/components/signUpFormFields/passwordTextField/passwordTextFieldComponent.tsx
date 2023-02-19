@@ -1,12 +1,10 @@
-import { IconButton } from "@mui/material";
-import React, { useState } from "react";
-import FormTextField from "../formTextField";
+import { useState } from "react";
+import { FieldsRegex } from "../../../enums/fields-regex";
+import { passwordFieldPropsModel } from "../../../models/passwordFieldPropsModel";
+import FormTextField from "../../formTextField";
 import style from "./passwordTextFieldComponent.module.scss";
-function PasswordTextFieldComponent() {
+function PasswordTextFieldComponent(props: passwordFieldPropsModel) {
   const [focus, setFocus] = useState(false);
-  if (focus === true) {
-  } else {
-  }
   return (
     <>
       {focus ? (
@@ -27,10 +25,17 @@ function PasswordTextFieldComponent() {
         fieldName={"password"}
         isRequired
         isPassword
+        regex={FieldsRegex.password}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
+        // validationRules={}
       />
     </>
   );
 }
+PasswordTextFieldComponent.defaultProps = {
+  label: "Password",
+  fieldName: "password",
+  isRequired: false,
+};
 export default PasswordTextFieldComponent;

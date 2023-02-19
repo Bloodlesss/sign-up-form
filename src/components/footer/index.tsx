@@ -1,1 +1,1 @@
-export { default } from './footerComponents';
+export { default } from "./footerComponents";

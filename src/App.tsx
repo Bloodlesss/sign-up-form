@@ -1,15 +1,16 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Main from "./pages/main";
 import MainRoutes from "./routes/mainRoutes";
+import Header from "./components/header";
+import FooterComponent from "./components/footer";
 function App() {
   return (
-    <>
-      <div className="header">title</div>
-      <MainRoutes></MainRoutes>
-      <div className="footer">footer</div>
-    </>
+    <div className="container">
+      <Header />
+      <div className="body">
+        <MainRoutes></MainRoutes>
+      </div>
+      <FooterComponent />
+    </div>
   );
 }
 

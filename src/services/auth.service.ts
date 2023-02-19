@@ -8,8 +8,8 @@ export const checkEmailExist = async (
   );
   const apiUrl = process.env.REACT_APP_SignUpApiUrl;
   console.log(apiUrl);
-  return true;
+  return false;
 };
-export const checkEmailExist2 = async () => {
-  return await new Promise((resolve) => setTimeout(resolve, 500));
-};
+// export const checkEmailExist2 = async () => {
+//   return await new Promise((resolve) => setTimeout(resolve, 500));
+// };
