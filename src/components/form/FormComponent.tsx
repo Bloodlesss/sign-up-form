@@ -31,21 +31,8 @@ function FormComponent() {
             }}
           />
 
-          <TextField
-            id="outlined-basic"
-            {...register("lName", { required: true, maxLength: 50 })}
-            label="Last Name"
-            placeholder="Last Name"
-            variant="outlined"
-          />
-
-          <TextField
-            id="outlined-basic"
-            {...register("uName", { required: true, maxLength: 50 })}
-            label="User Name"
-            placeholder="User Name"
-            variant="outlined"
-          />
+          <FormTextField label={"Last Name"} fieldName={"lName"} isRequired />
+          <FormTextField label={"Last Name"} fieldName={"lName"} isRequired />
           <FormTextField
             label={"Password"}
             fieldName={"password"}

@@ -6,7 +6,7 @@ export const checkEmailExist = async (
   let result: ValidateResult = await new Promise((resolve) =>
     setTimeout(resolve, 4000)
   );
-  const apiUrl = process.env.signUpApiUrl;
+  const apiUrl = process.env.REACT_APP_SignUpApiUrl;
   console.log(apiUrl);
   return true;
 };
