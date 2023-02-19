@@ -1,5 +1,5 @@
 import { InputBaseComponentProps } from "@mui/material";
-
+import PropTypes from "prop-types";
 export interface formFieldPropsModel {
   fieldName: string;
   pattern: RegExp;
@@ -10,4 +10,7 @@ export interface formFieldPropsModel {
   id: string;
   maxLength: number;
   inputProps: InputBaseComponentProps;
+  onFocus: () => void;
+  onBlur: () => void;
+  validationRules: Record<string, any>;
 }

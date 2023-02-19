@@ -1,9 +1,11 @@
+import { Password } from "@mui/icons-material";
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { SubmitHandler } from "react-hook-form/dist/types";
 import { signUpModel } from "../../models/signUpModel";
 import FormTextField from "../formTextField";
+import PasswordTextField from "../passwordTextField";
 import style from "./FormComponent.module.scss";
 
 function FormComponent() {
@@ -20,31 +22,16 @@ function FormComponent() {
     <>
       <FormProvider {...methods}>
         <form className={style.formBody} onSubmit={handleSubmit(onSubmit)}>
-          <TextField
-            id="outlined-basic"
-            {...register("fName", { maxLength: 50 })}
-            label="First Name"
-            placeholder="First Name"
-            variant="outlined"
-            onChange={async () => {
-              await trigger("email");
-            }}
-          />
-
-          <FormTextField label={"Last Name"} fieldName={"lName"} isRequired />
+          <FormTextField label={"First Name"} fieldName={"fName"} isRequired />
           <FormTextField label={"Last Name"} fieldName={"lName"} isRequired />
           <FormTextField
-            label={"Password"}
-            fieldName={"password"}
-            isRequired
-            isPassword
-          />
-          <FormTextField
-            label={"email"}
+            label={"Email"}
             fieldName={"email"}
             isRequired
             isEmail
           />
+          <PasswordTextField />
+
           <Button variant="outlined" type="submit">
             Submit
           </Button>

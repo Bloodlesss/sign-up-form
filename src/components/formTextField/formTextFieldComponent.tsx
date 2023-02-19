@@ -16,6 +16,9 @@ function FormTextFieldComponent(props: formFieldPropsModel) {
     id,
     maxLength,
     inputProps,
+    onFocus,
+    onBlur,
+    validationRules,
   } = props;
   const type = isEmail ? "email" : isPassword ? "password" : "text";
   return (
@@ -25,18 +28,21 @@ function FormTextFieldComponent(props: formFieldPropsModel) {
       label={label}
       type={type}
       inputProps={inputProps}
+      onFocus={onFocus}
       {...register(fieldName, {
         required: isRequired,
         maxLength: maxLength,
-        validate: {
-          checkEmailExist: async (value) => await checkEmailExist(value),
-        },
+        onBlur: onBlur,
+        validate: validationRules,
       })}
     />
   );
 }
 FormTextFieldComponent.defaultProps = {
   isEmail: false,
+  validationRules: {},
+  onFocus: () => {},
+  onBlur: () => {},
   pattern: "(.*?)",
   isPassword: false,
   isRequired: false,
