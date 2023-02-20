@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { formFieldPropsModel } from "../../models/formFieldPropsModel";
 import { checkEmailExist } from "../../services/auth.service";
-
+import style from "./formTextFieldComponent.module.scss";
 function FormTextFieldComponent(props: formFieldPropsModel) {
   const {
     register,
@@ -30,6 +30,7 @@ function FormTextFieldComponent(props: formFieldPropsModel) {
   return (
     <>
       <TextField
+        style={{ color: "white" }}
         id={id}
         helperText={
           currentError ? (
@@ -41,7 +42,6 @@ function FormTextFieldComponent(props: formFieldPropsModel) {
         error={currentError != null}
         label={label}
         type={type}
-        inputProps={inputProps}
         onFocus={onFocus}
         {...register(fieldName, {
           pattern: { value: regex, message: "Please Enter a valid Value" },

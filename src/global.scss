@@ -1,3 +1,14 @@
-* {
+$gradient-start: #132631;
+$gradient-end: #48ddb4;
+$color2: #ffffff; // red
+$color3: #464b4b; // teal
+
+$gradient: linear-gradient(322deg, $color2, $color3);
+$selected-color: #1e90ff;
+$contrast-color: black; // set a contrasting text color, white in this case
+
+.container {
   font-family: "Open Sans", sans-serif;
+  background: $gradient;
+  color: $contrast-color;
 }

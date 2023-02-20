@@ -4,35 +4,46 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { SubmitHandler } from "react-hook-form/dist/types";
 import { FieldsRegex } from "../../enums/fields-regex";
-import { signUpModel } from "../../models/signUpModel";
-import { checkEmailExist } from "../../services/auth.service";
+import { UserInfo } from "../../models/userInfoModel";
+import { checkEmailExist, submitUser } from "../../services/auth.service";
 import FormTextField from "../formTextField";
 import { EmailTextField, PasswordTextField } from "../signUpFormFields";
 import style from "./FormComponent.module.scss";
 
 function FormComponent() {
-  const methods = useForm<signUpModel>({ mode: "onChange" });
+  const methods = useForm<UserInfo>({ mode: "onChange" });
   const {
     handleSubmit,
-    formState: { errors },
+    trigger,
+    formState: { errors, isValid },
   } = methods;
-  const onSubmit: SubmitHandler<signUpModel> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<UserInfo> = (data) => {
+    console.log(data);
+    submitUser(data);
+  };
   console.log(errors);
+
   return (
-    <>
+    <div className={style.formContainer}>
       <FormProvider {...methods}>
         <form className={style.formBody} onSubmit={handleSubmit(onSubmit)}>
           <FormTextField
             regex={FieldsRegex.Names}
             label={"First Name"}
-            fieldName={"fName"}
+            fieldName={"firstName"}
             isRequired
+            onBlur={async () => {
+              await trigger("password");
+            }}
           />
           <FormTextField
             regex={FieldsRegex.Names}
             label={"Last Name"}
-            fieldName={"lName"}
+            fieldName={"lastName"}
             isRequired
+            onBlur={async () => {
+              await trigger("password");
+            }}
           />
           <EmailTextField
             regex={FieldsRegex.email}
@@ -50,12 +61,16 @@ function FormComponent() {
             isRequired={true}
           />
 
-          <Button variant="outlined" type="submit">
+          <Button
+            disabled={!isValid || errors.email != null}
+            variant="outlined"
+            type="submit"
+          >
             Submit
           </Button>
         </form>
       </FormProvider>
-    </>
+    </div>
   );
 }
 export default FormComponent;

@@ -1,5 +1,5 @@
 export interface passwordFieldPropsModel {
-  label: String;
-  fieldName: String;
-  isRequired: Boolean;
+  label: string;
+  fieldName: string;
+  isRequired: boolean;
 }

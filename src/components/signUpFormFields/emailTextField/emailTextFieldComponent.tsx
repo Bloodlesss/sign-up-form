@@ -28,7 +28,6 @@ function EmailTextFieldComponent(props: emailFieldPropsModel) {
   }
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     debounceFn(event.target.value);
-    // console.log(event.target.value);
   }
 
   console.log(errors[fieldName]);
@@ -43,11 +42,9 @@ function EmailTextFieldComponent(props: emailFieldPropsModel) {
         handleChange={handleChange}
         onFocus={(): void => {
           onFocus();
-          // setLoading(false);
         }}
         onBlur={(): void => {
           onBlur();
-          // setLoading(true);
         }}
       ></FormTextFieldComponent>
       {loading && <CircularProgress />}
