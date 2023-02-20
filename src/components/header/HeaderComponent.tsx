@@ -6,7 +6,6 @@ import style from "./HeaderComponent.module.scss";
 function HeaderComponent() {
   const [value, setValue] = useState(0);
   const location = useLocation();
-
   const handleChange = (_event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };

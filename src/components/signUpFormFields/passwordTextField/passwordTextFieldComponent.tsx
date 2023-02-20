@@ -5,21 +5,9 @@ import FormTextField from "../../formTextField";
 import style from "./passwordTextFieldComponent.module.scss";
 function PasswordTextFieldComponent(props: passwordFieldPropsModel) {
   const [focus, setFocus] = useState(false);
+  const [fullfilled, setFullfilled] = useState();
   return (
-    <>
-      {focus ? (
-        <div className={style.popupInfo}>
-          <h3>Password validation</h3>
-          <hr></hr>
-          <ul className={style.passwordUl}>
-            <li>Should be a minimum of EIGHT characters</li>
-            <li>Should contain at least one UPPERCASE letter</li>
-            <li>Should contain at least one LOWERCASE letter</li>
-            <li>Should not contain FIRST NAME</li>
-            <li>Should not contain LAST NAME</li>
-          </ul>
-        </div>
-      ) : null}
+    <div className={style.container}>
       <FormTextField
         label={"Password"}
         fieldName={"password"}
@@ -28,10 +16,27 @@ function PasswordTextFieldComponent(props: passwordFieldPropsModel) {
         regex={FieldsRegex.password}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
-        // validationRules={}
+      // validationRules={}
       />
-    </>
+      {true ? (
+        <div className={style.popupInfo}>
+          <h3>Password validation</h3>
+          <hr></hr>
+          <ul className={style.passwordUl}>
+            <li className={style.notFulfilled}>Should be a minimum of EIGHT characters</li>
+            <li className={style.notFulfilled}>Should contain at least one UPPERCASE letter</li>
+            <li className={style.notFulfilled}>Should contain at least one LOWERCASE letter</li>
+            <li className={style.notFulfilled}>Should not contain FIRST NAME</li>
+            <li className={style.notFulfilled}>Should not contain LAST NAME</li>
+          </ul>
+        </div>
+      ) : null}
+
+    </div>
   );
+}
+function ValidatePassword() {
+
 }
 PasswordTextFieldComponent.defaultProps = {
   label: "Password",
