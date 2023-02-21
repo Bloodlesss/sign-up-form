@@ -1,16 +1,14 @@
-import { Tab, Tabs } from "@mui/material";
+import { Tabs } from "@mui/material";
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { LinkTab } from "../linkTabs";
 import style from "./HeaderComponent.module.scss";
 function HeaderComponent() {
   const [value, setValue] = useState(0);
-  const location = useLocation();
   const handleChange = (_event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
   return (
-    <div className={style.headerContainer}>
+    <div data-testid={"test-header"} className={style.headerContainer}>
       <h1>React Skill Set</h1>
       <div>
         <Tabs

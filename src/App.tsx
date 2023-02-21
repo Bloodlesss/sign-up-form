@@ -5,8 +5,8 @@ import style from "./App.module.scss";
 function App() {
   return (
     <div className={style.container}>
-      <Header />
-      <div className={style.body}>
+      <Header></Header>
+      <div data-testid={"test-main-routes"} className={style.body}>
         <MainRoutes></MainRoutes>
       </div>
       <FooterComponent />

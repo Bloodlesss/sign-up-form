@@ -7,10 +7,10 @@ interface LinkTabProps {
 }
 
 function LinkTabsComponent(props: LinkTabProps) {
-  const { href, label } = props;
+  const { href } = props;
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(href as To);
+    navigate(href as string);
   };
   return (
     <Tab

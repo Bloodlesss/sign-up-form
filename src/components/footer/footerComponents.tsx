@@ -2,7 +2,7 @@ import React from "react";
 import style from "./footerComponents.module.scss";
 function FooterComponent() {
   return (
-    <div className={style.footerContainer}>
+    <div data-testid={"test-footer"} className={style.footerContainer}>
       <p>
         © 2023 Jamal Saleh, All Api's used are OpenSource APIs and I do not Own
         anything
