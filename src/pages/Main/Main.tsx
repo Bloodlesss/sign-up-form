@@ -10,9 +10,6 @@ function Main() {
           demonstrate my abilities in creating beautiful and functional web
           applications. The website includes a makeshift signup page to showcase
           my skills in building user authentication and registration features.
-          Additionally, I've incorporated visualization libraries such as D3.js
-          to showcase my proficiency in integrating complex data visualizations
-          into a web application.
         </label>
       </div>
       <h2>Portfolio</h2>

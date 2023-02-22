@@ -14,7 +14,6 @@ import style from "./FormComponent.module.scss";
 interface ChildProps {
   onSubmit: (data: SignedUpUser) => void;
 }
-
 function FormComponent(props: ChildProps) {
   const methods = useForm<UserInfo>({ mode: "onChange" });
   const [isloading, setIsLoading] = useState(false);

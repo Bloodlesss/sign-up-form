@@ -14,7 +14,6 @@ function HeaderComponent() {
         <Tabs value={index} aria-label="nav tabs example">
           <LinkTab value={0} label="Main" href="/Main" />
           <LinkTab value={1} label="SignUp" href="/SignUp" />
-          <LinkTab value={2} label="Dashboard" href="/" />
         </Tabs>
       </div>
     </div>
