@@ -13,7 +13,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+  background: $gradient;
 }
 .container::after {
   content: "";

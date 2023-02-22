@@ -1,25 +1,32 @@
 import { Password } from "@mui/icons-material";
-import { Button, TextField } from "@mui/material";
-import React from "react";
+import { Button, CircularProgress, TextField } from "@mui/material";
+import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { SubmitHandler } from "react-hook-form/dist/types";
 import { FieldsRegex } from "../../enums/fields-regex";
 import { UserInfo } from "../../models/userInfoModel";
+import { SignedUpUser } from "../../models/signedUpUserModel";
 import { checkEmailExist, submitUser } from "../../services/auth.service";
 import FormTextField from "../formTextField";
 import { EmailTextField, PasswordTextField } from "../signUpFormFields";
 import style from "./FormComponent.module.scss";
 
-function FormComponent() {
+interface ChildProps {
+  onSubmit: (data: SignedUpUser) => void;
+}
+
+function FormComponent(props: ChildProps) {
   const methods = useForm<UserInfo>({ mode: "onChange" });
+  const [isloading, setIsLoading] = useState(false);
   const {
     handleSubmit,
     trigger,
     formState: { errors, isValid },
   } = methods;
-  const onSubmit: SubmitHandler<UserInfo> = (data) => {
+  const onSubmit: SubmitHandler<UserInfo> = async (data) => {
     console.log(data);
-    submitUser(data);
+    setIsLoading(true);
+    props.onSubmit(await submitUser(data));
   };
   console.log(errors);
 
@@ -62,11 +69,11 @@ function FormComponent() {
           />
 
           <Button
-            disabled={!isValid || errors.email != null}
+            disabled={!isValid || errors.email != null || isloading}
             variant="outlined"
             type="submit"
           >
-            Submit
+            {isloading ? <CircularProgress /> : "Submit"}
           </Button>
         </form>
       </FormProvider>

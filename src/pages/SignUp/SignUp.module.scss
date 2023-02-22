@@ -1,1 +1,21 @@
 @import "../../global.scss";
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  .signUpContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #c0c0c0;
+    color: #737272;
+    min-width: 260px;
+    text-align: center;
+  }
+  .infoContainer {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+  }
+}

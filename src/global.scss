@@ -1,9 +1,7 @@
-$gradient-start: #132631;
-$gradient-end: #48ddb4;
-$color2: #ffffff;
-$color3: #464b4b;
+$gradient-start: #665fee;
+$gradient-end: #27c2de;
 
-$gradient: linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+$gradient: linear-gradient(45deg, $gradient-start 0%, $gradient-end 100%);
 $selected-color: #1e90ff;
 $contrast-color: white; // set a contrasting text color, white in this case
 

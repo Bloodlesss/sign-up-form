@@ -7,7 +7,6 @@ import { UserInfo } from "../models/userInfoModel";
 export const checkEmailExist = async (
   value: string
 ): Promise<ValidateResult> => {
-  return false;
   const apiUrl = process.env.REACT_APP_emailVerificationUrl as string;
   const verificationKey = process.env.REACT_APP_emailVerificationKey as string;
   const headers = {
@@ -23,13 +22,16 @@ export const checkEmailExist = async (
   return response.data.smtp_check && response.data.mx_found;
 };
 export const submitUser = async (user: UserInfo): Promise<SignedUpUser> => {
-  const apiUrl = process.env.REACT_APP_SignUpApiUrl;
-  const url = apiUrl as string;
-  const response: SignedUpUser = await axios.post(url + "", user, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log(response);
-  return response;
+  try {
+    const apiUrl = process.env.REACT_APP_SignUpApiUrl;
+    const url = apiUrl as string;
+    const response: any = await axios.post(url + "", user, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  } catch (e) {
+    return { _id: "0", email: "", firstName: "", lastName: "" };
+  }
 };
