@@ -7,6 +7,7 @@ import { UserInfo } from "../models/userInfoModel";
 export const checkEmailExist = async (
   value: string
 ): Promise<ValidateResult> => {
+  return false;
   const apiUrl = process.env.REACT_APP_emailVerificationUrl as string;
   const verificationKey = process.env.REACT_APP_emailVerificationKey as string;
   const headers = {

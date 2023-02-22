@@ -1,8 +1,9 @@
 import React from "react";
-import { render, screen, fireEvent, wait, act } from "@testing-library/react";
+import { render, screen, act } from "@testing-library/react";
 import App from "./App";
 import { MemoryRouter } from "react-router-dom";
 import MainRoutes from "./routes/mainRoutes";
+import { TestingConstants } from "./enums/testing-constants";
 
 describe("App", () => {
   let wrapper;
@@ -20,10 +21,10 @@ describe("App", () => {
         <App></App>
       </MemoryRouter>
     );
-    const header = await screen.findByTestId("test-header");
+    const header = await screen.findByTestId(TestingConstants.testHeader);
     expect(header).toBeInTheDocument();
 
-    const footer = await screen.findByTestId("test-footer");
+    const footer = await screen.findByTestId(TestingConstants.testFooter);
     expect(footer).toBeInTheDocument();
   });
 
@@ -33,7 +34,9 @@ describe("App", () => {
         <App></App>
       </MemoryRouter>
     );
-    const mainRoutes = await screen.findByTestId("test-main-routes");
+    const mainRoutes = await screen.findByTestId(
+      TestingConstants.testMainRoutes
+    );
     expect(mainRoutes).toBeInTheDocument();
   });
 });

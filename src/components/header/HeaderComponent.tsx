@@ -9,7 +9,7 @@ function HeaderComponent() {
   };
   return (
     <div data-testid={"test-header"} className={style.headerContainer}>
-      <h1>React Skill Set</h1>
+      <h1>Welcome to my website!</h1>
       <div>
         <Tabs
           value={value}

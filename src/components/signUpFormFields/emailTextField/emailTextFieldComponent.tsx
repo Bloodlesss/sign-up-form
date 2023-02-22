@@ -14,23 +14,31 @@ function EmailTextFieldComponent(props: emailFieldPropsModel) {
     setError,
     formState: { errors },
   } = useFormContext();
-  const debounceFn = useCallback(_debounce(handleDebounceFn, 1000), []);
+  const debounceFn = useCallback((value: string) => {
+    if (errors[fieldName]?.message === "pattern") {
+      setBasicValidation(false);
+    } else {
+      setBasicValidation(true);
+    }
+    _debounce(handleDebounceFn, 1000);
+  }, []);
   const [loading, setLoading] = useState(false);
+  const [basicValidation, setBasicValidation] = useState(false);
   async function handleDebounceFn(inputValue: string) {
-    setLoading(true);
-    const response = await checkEmailExist(inputValue);
-    if (!response)
-      setError(fieldName, {
-        type: "CheckEmailExist",
-        message: "This Email Does Not Exist Please Enter a Valid Email",
-      });
-    setLoading(false);
+    if (basicValidation) {
+      setLoading(true);
+      const response = await checkEmailExist(inputValue);
+      if (!response)
+        setError(fieldName, {
+          type: "CheckEmailExist",
+          message: "This Email Does Not Exist Please Enter a Valid Email",
+        });
+      setLoading(false);
+    }
   }
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     debounceFn(event.target.value);
   }
-
-  console.log(errors[fieldName]);
 
   return (
     <div className={style.container}>
