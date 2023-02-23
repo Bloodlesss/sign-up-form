@@ -86,6 +86,7 @@ the project has *required requirements* and added *Extra Features* that have bee
 
 ### Application Level:
 
+- Deployed the application on Netlify. [https://jamal-react-signup-form.netlify.app/](https://jamal-react-signup-form.netlify.app/).
 - Deployed the application on GitHub. [https://github.com/Bloodlesss/sign-up-form-typescript](https://github.com/Bloodlesss/sign-up-form-typescript).
 - Used MUI, axios, React Hooks Form, react router 6.8 and other small libraries to accommodate the project needs.
 - Added a loader to compensate the  gap in time between sending and recieving the HttpRequests.
