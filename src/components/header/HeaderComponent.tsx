@@ -1,7 +1,7 @@
 import { Tabs } from "@mui/material";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import routes from "../../enums/routes";
+import routes from "../../constants/routes";
 import { LinkTab } from "../linkTabs";
 import style from "./HeaderComponent.module.scss";
 function HeaderComponent() {

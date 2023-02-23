@@ -1,8 +1,6 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import routes from "../enums/routes";
-const Main = React.lazy(() => import("../pages/main"));
-const SignUp = React.lazy(() => import("../pages/signUp"));
+import routes from "../constants/routes";
 
 function MainRoutes() {
   return (

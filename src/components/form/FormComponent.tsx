@@ -3,7 +3,7 @@ import { Button, CircularProgress, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { SubmitHandler } from "react-hook-form/dist/types";
-import { FieldsRegex } from "../../enums/fields-regex";
+import { FieldsRegex } from "../../constants/fields-regex";
 import { UserInfo } from "../../models/userInfoModel";
 import { SignedUpUser } from "../../models/signedUpUserModel";
 import { checkEmailExist, submitUser } from "../../services/auth.service";

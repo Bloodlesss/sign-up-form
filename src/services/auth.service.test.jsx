@@ -1,6 +1,6 @@
 import axios from "axios";
 import { checkEmailExist, submitUser } from "./auth.service";
-import { TestingConstants } from "../enums/testing-constants";
+import { TestingConstants } from "../constants/testing-constants";
 jest.mock("axios", () => ({
   get: jest.fn(() => Promise.resolve({ data: {} })),
   post: jest.fn(() => Promise.resolve({ data: {} })),

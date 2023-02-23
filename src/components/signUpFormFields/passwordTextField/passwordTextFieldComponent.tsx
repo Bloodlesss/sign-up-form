@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import { FieldsRegex } from "../../../enums/fields-regex";
+import { FieldsRegex } from "../../../constants/fields-regex";
 import { passwordFieldPropsModel } from "../../../models/passwordFieldPropsModel";
 import { passwordFullfilledModel } from "../../../models/passwordFullfilledModel";
 import { UserInfo } from "../../../models/userInfoModel";
