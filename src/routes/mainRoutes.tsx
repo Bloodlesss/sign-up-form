@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import routes from "../constants/routes";
 import Main from "../pages/main";
 import SignUp from "../pages/signUp";
 const routes = [
