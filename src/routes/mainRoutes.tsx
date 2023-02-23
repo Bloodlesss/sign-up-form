@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Main from "../pages/main";
-import SignUp from "../pages/signUp";
+import Main from "../pages/main/Main";
+import SignUp from "../pages/signUp/SignUp";
 const routes = [
   {
     path: "/Main",
