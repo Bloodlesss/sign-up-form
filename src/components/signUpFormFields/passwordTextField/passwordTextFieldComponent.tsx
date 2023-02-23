@@ -1,10 +1,9 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import { FieldsRegex } from "../../../constants/fields-regex";
 import { passwordFieldPropsModel } from "../../../models/passwordFieldPropsModel";
 import { passwordFullfilledModel } from "../../../models/passwordFullfilledModel";
 import { UserInfo } from "../../../models/userInfoModel";
-import FormTextField from "../../formTextField";
+import FormTextField from "../../formTextField/formTextFieldComponent";
 import style from "./passwordTextFieldComponent.module.scss";
 function PasswordTextFieldComponent(props: passwordFieldPropsModel) {
   const { label, fieldName, isRequired } = props;

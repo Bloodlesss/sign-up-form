@@ -1,4 +1,3 @@
-import { Password } from "@mui/icons-material";
 import { Button, CircularProgress, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -7,7 +6,7 @@ import { FieldsRegex } from "../../constants/fields-regex";
 import { UserInfo } from "../../models/userInfoModel";
 import { SignedUpUser } from "../../models/signedUpUserModel";
 import { checkEmailExist, submitUser } from "../../services/auth.service";
-import FormTextField from "../formTextField";
+import FormTextField from "../formTextField/formTextFieldComponent";
 import { EmailTextField, PasswordTextField } from "../signUpFormFields";
 import style from "./FormComponent.module.scss";
 

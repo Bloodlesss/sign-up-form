@@ -1,11 +1,10 @@
 import React, { FormEvent, useCallback, useEffect, useState } from "react";
-import FormTextFieldComponent from "../../formTextField";
+import FormTextFieldComponent from "../../formTextField/formTextFieldComponent";
 import { emailFieldPropsModel } from "../../../models/emailFieldPropsModel";
 import { FieldError, useFormContext } from "react-hook-form";
 import style from "./emailTextFieldComponent.module.scss";
 import { CircularProgress } from "@mui/material";
 import _debounce from "lodash/debounce";
-import axios from "axios";
 import { checkEmailExist } from "../../../services/auth.service";
 import { ChangeEvent } from "react";
 function EmailTextFieldComponent(props: emailFieldPropsModel) {
