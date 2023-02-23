@@ -3,7 +3,7 @@ import { useFormContext } from "react-hook-form";
 import { passwordFieldPropsModel } from "../../../models/passwordFieldPropsModel";
 import { passwordFullfilledModel } from "../../../models/passwordFullfilledModel";
 import { UserInfo } from "../../../models/userInfoModel";
-import FormTextField from "../../formTextField/formTextFieldComponent";
+import FormTextField from "../../formTextField";
 import style from "./passwordTextFieldComponent.module.scss";
 function PasswordTextFieldComponent(props: passwordFieldPropsModel) {
   const { label, fieldName, isRequired } = props;

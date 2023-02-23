@@ -1,34 +1,7 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Main from "../pages/main/Main";
-import SignUp from "../pages/signUp/SignUp";
+import routes from "../constants/routes";
 
-const routes = [
-  {
-    path: "/Main",
-    element: (
-      <React.Suspense fallback={<>...</>}>
-        <Main />
-      </React.Suspense>
-    ),
-  },
-  {
-    path: "/SignUp",
-    element: (
-      <React.Suspense fallback={<>...</>}>
-        <SignUp />
-      </React.Suspense>
-    ),
-  },
-  {
-    path: "/",
-    element: (
-      <React.Suspense fallback={<>...</>}>
-        <Main />
-      </React.Suspense>
-    ),
-  },
-];
 function MainRoutes() {
   return (
     <Routes>

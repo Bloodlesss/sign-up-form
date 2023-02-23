@@ -1,6 +1,6 @@
 import MainRoutes from "./routes/mainRoutes";
-import Header from "./components/header/HeaderComponent";
-import FooterComponent from "./components/footer/footerComponents";
+import Header from "./components/header";
+import FooterComponent from "./components/footer";
 import style from "./App.module.scss";
 function App() {
   return (

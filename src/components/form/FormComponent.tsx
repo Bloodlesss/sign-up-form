@@ -6,7 +6,7 @@ import { FieldsRegex } from "../../constants/fields-regex";
 import { UserInfo } from "../../models/userInfoModel";
 import { SignedUpUser } from "../../models/signedUpUserModel";
 import { checkEmailExist, submitUser } from "../../services/auth.service";
-import FormTextField from "../formTextField/formTextFieldComponent";
+import FormTextField from "../formTextField";
 import { EmailTextField, PasswordTextField } from "../signUpFormFields";
 import style from "./FormComponent.module.scss";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import App from "./App";
 import { MemoryRouter } from "react-router-dom";
-import MainRoutes from "./routes/mainRoutes";
+
 import { TestingConstants } from "./constants/testing-constants";
 
 describe("App", () => {

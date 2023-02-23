@@ -1,5 +1,5 @@
 import React, { FormEvent, useCallback, useEffect, useState } from "react";
-import FormTextFieldComponent from "../../formTextField/formTextFieldComponent";
+import FormTextFieldComponent from "../../formTextField";
 import { emailFieldPropsModel } from "../../../models/emailFieldPropsModel";
 import { FieldError, useFormContext } from "react-hook-form";
 import style from "./emailTextFieldComponent.module.scss";
